@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>quicktrim Documentation</title>
+    <meta name="keywords" content="trim,fatest" />
+    <meta name="description" content="" />
+    <script src="assets/prettify.js"></script>
+    <script src="assets/jquery-1.8.2.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/base.css" />
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="./index.html">quicktrim</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+            
+            
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header class="jumbotron subhead">
+      <div class="container">
+        <h1>quicktrim <small>Version: 0.0.2 By @Aleafs Zhang (zhangxc83@gmail.com)</small></h1>
+        <p class="lead">
+          
+        </p>
+      </div>
+    </header>
+<div class="container content">
+  <div class="row">
+  	<div class="span3 bs-docs-sidebar">
+      <ul class="nav nav-list bs-docs-sidenav affix">
+
+  <li class="level_2">
+    <a href="#index_About" title="About">
+      <i class="icon-chevron-right"></i>About
+    </a>
+  </li>
+
+  <li class="level_2">
+    <a href="#index_Install" title="Install">
+      <i class="icon-chevron-right"></i>Install
+    </a>
+  </li>
+
+  <li class="level_2">
+    <a href="#index_Usage" title="Usage">
+      <i class="icon-chevron-right"></i>Usage
+    </a>
+  </li>
+
+  <li class="level_2">
+    <a href="#index_License" title="License">
+      <i class="icon-chevron-right"></i>License
+    </a>
+  </li>
+
+</ul>
+
+    </div>
+    <div class="span9">
+      <section>
+        <p><a href="http://travis-ci.org/aleafs/quicktrim"><img src="https://secure.travis-ci.org/aleafs/quicktrim.png?branch=master" alt="Build Status"></a>
+
+</p>
+<h2>About</h2>
+<p><code>quicktrim</code> is a module to trim ascii string, faster than <code>String.trim</code>:
+
+</p>
+<ul>
+<li>v0.0.2 (use substring instead of slice)</li>
+</ul>
+<pre><code class="lang-bash"> quicktrim() x 12,670,083 ops/sec ±0.47% (69 runs sampled)
+String.trim() x 5,770,520 ops/sec ±0.33% (69 runs sampled)
+Fastest is  quicktrim()</code></pre>
+<ul>
+<li>v0.0.1</li>
+</ul>
+<pre><code class="lang-bash">$ node benchmark/quicktrim.js
+ quicktrim() x 11,679,437 ops/sec ±0.30% (69 runs sampled)
+String.trim() x 5,747,307 ops/sec ±0.35% (53 runs sampled)
+  TJ&#39;s trim() x 1,780,430 ops/sec ±2.19% (66 runs sampled)
+Fastest is  quicktrim()</code></pre>
+<h2>Install</h2>
+<pre><code class="lang-bash">$ npm install quicktrim</code></pre>
+<h2>Usage</h2>
+<pre><code class="lang-javascript">
+var trim = require(&#39;quicktrim&#39;).trim;
+
+trim(&#39; I am so glad to hear about you. &#39;);</code></pre>
+<h2>License</h2>
+<p>(The MIT License)
+
+</p>
+<p>Copyright (c) 2012 aleafs and other contributors
+
+</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+&#39;Software&#39;), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+</p>
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+</p>
+<p>THE SOFTWARE IS PROVIDED &#39;AS IS&#39;, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+</p>
+
+      </section>
+    </div>
+  </div>
+</div>
+      <footer class="footer">
+        <div class="container">
+          <p class="pull-right">
+            <a href="#">Back to top</a>
+          </p>
+          <p>此文档通过doxmate生成。主题借鉴Bootstrap API文档风格，注解基于<a href="https://github.com/visionmedia/dox">Dox</a>。欢迎关注doxmate作者<a href="http://weibo.com/shyvo" target="_blank">@朴灵</a></p>
+          <ul class="footer-links">
+            <li><a href="https://github.com/visionmedia/dox">Dox主页</a></li>
+            <li><a href="http://html5ify.com/doxmate">Doxmate主页</a></li>
+            <li><a href="https://github.com/JacksonTian/doxmate/issues?state=open">提交bug</a></li>
+          </ul>
+      </div>
+    </footer>
+    <script>
+      $(function() {
+        $('pre').addClass('prettyprint');
+        $('td pre').removeClass('prettyprint');
+        prettyPrint();
+        var $window = $(window);
+        $('.bs-docs-sidenav').affix({
+          offset: {
+            top: function () {
+              return $window.width() <= 980 ? 290 : 210
+            },
+            bottom: 270
+          }
+        });
+        $(".content").find('h1, h2, h3, h4, h5, h6').each(function () {
+          var node = $(this);
+          if (!node.attr("id")) {
+            node.attr("id", "index_" + node.text());
+          }
+          node.css("paddingTop", 40);
+        });
+      });
+    </script>
+  
+  </body>
+</html>
